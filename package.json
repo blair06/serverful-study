@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start:prod": "NODE_ENV=production node .next/standalone/server.js",
+    "upload:static": "aws s3 sync .next/static s3://next-static-blair/_next/static --cache-control \"public,max-age=31536000,immutable\"",
+    "cf:invalidate": "aws cloudfront create-invalidation --distribution-id EZSMWND73B2A7 --paths \"/_next/*\""
   },
   "dependencies": {
     "react": "19.1.0",
