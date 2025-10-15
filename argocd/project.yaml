@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: serverful-study-project
+  namespace: argocd
+spec:
+  description: Serverful Study Project
+  sourceRepos:
+    - "https://github.com/blair/serverful-study.git"
+  destinations:
+    - namespace: "serverful-study-*"
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "apps"
+      kind: Deployment
+    - group: ""
+      kind: Service
+    - group: "networking.k8s.io"
+      kind: Ingress
+    - group: ""
+      kind: ConfigMap
+    - group: ""
+      kind: Secret
