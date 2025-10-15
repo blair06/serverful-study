@@ -9,7 +9,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm ci --only=production && npm cache clean --force
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -22,6 +22,7 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# Build with optimizations
 RUN npm run build
 
 # Production image, copy all the files and run next
