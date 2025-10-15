@@ -1,4 +1,4 @@
-name: Fast Docker Build (Development)
+name: Ultra Fast Docker Build
 
 on:
   push:
@@ -17,9 +17,9 @@ env:
   IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/serverful-study
 
 jobs:
-  build-fast:
+  build-ultra-fast:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 # 10분 타임아웃 설정
+    timeout-minutes: 5 # 5분 타임아웃 설정
 
     steps:
       - name: Checkout repository
@@ -56,14 +56,15 @@ jobs:
           build-args: |
             BUILDKIT_INLINE_CACHE=1
             NODE_ENV=production
-          # 추가 최적화 옵션
+          # 최대 최적화 옵션
           outputs: type=image,push=true
           provenance: false
           sbom: false
+          metadata: false
 
       - name: Build Summary
         run: |
-          echo "🚀 Fast build completed!"
+          echo "🚀 Ultra fast build completed!"
           echo "Image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
           echo "Tags: ${{ steps.meta.outputs.tags }}"
           echo "Build time: $(date)"
