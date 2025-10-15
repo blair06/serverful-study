@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: serverful-study
-          image: ghcr.io/blair/serverful-study:latest
+          image: ghcr.io/blair06/serverful-study:latest
           ports:
             - containerPort: 3000
           env:

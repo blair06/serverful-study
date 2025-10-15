@@ -4,7 +4,7 @@ metadata:
   name: serverful-study-dev
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: serverful-study=ghcr.io/blair/serverful-study
+    argocd-image-updater.argoproj.io/image-list: serverful-study=ghcr.io/blair06/serverful-study
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
     argocd-image-updater.argoproj.io/serverful-study.update-strategy: latest
@@ -14,7 +14,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/blair/serverful-study.git
+    repoURL: https://github.com/blair06/serverful-study.git
     targetRevision: HEAD
     path: k8s/overlays/dev
   destination:
