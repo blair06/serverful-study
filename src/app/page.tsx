@@ -13,6 +13,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <h1>Serverful Study</h1>
         <ol>
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
