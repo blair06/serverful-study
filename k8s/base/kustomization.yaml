@@ -12,5 +12,5 @@ commonLabels:
   version: v1
 
 images:
-  - name: docker.io/$DOCKERHUB_USERNAME/serverful-study
+  - name: docker.io/blair06/serverful-study
     newTag: latest
