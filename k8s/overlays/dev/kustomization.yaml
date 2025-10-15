@@ -13,5 +13,5 @@ commonLabels:
   environment: dev
 
 images:
-  - name: ghcr.io/blair/serverful-study
-    newTag: dev
+  - name: docker.io/$DOCKERHUB_USERNAME/serverful-study
+    newTag: develop

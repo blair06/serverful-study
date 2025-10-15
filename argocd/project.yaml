@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Serverful Study Project
   sourceRepos:
-    - "https://github.com/blair/serverful-study.git"
+    - "https://github.com/blair06/serverful-study.git"
   destinations:
     - namespace: "serverful-study-*"
       server: https://kubernetes.default.svc

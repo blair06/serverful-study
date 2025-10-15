@@ -12,5 +12,5 @@ commonLabels:
   version: v1
 
 images:
-  - name: ghcr.io/blair/serverful-study
+  - name: docker.io/$DOCKERHUB_USERNAME/serverful-study
     newTag: latest
